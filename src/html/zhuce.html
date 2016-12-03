@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/zhuce.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script>
+			   $(function(){
+			   	   
+			   	   //  注册方式的切换
+			   	      $("#ul_btn  li").on("click",function(){
+			   	      	     
+			   	      	        var index=$(this).index();
+			   	      	        
+			   	      	        $("#ul_btn li").eq(index).css({
+			   	      	        	   borderLeft:"1px  solid  #E6E6E6",
+			   	      	        	   borderRight:"1px  solid  #E6E6E6",
+			   	      	        	   borderTop:"2px  solid  #c00",
+			   	      	        	   borderBottom:"none",
+			   	      	        }).siblings().css({
+			   	      	        	   borderLeft:"none",
+			   	      	        	   borderRight:"none",
+			   	      	        	   borderTop:"none",
+			   	      	        	   borderBottom:"1px  solid  #E6E6E6",
+			   	      	        });
+			   	      	 
+			   	      	
+			   	      });
+			   	      
+			   	     //表单的验证
+			   	     
+			   	     // 手机号码验证
+			   	       var user;
+			   	        var str1;
+			   	       var $username=$("#username");
+			   	     $username.on("keyup",function(){
+			   	     	      str1=$username.val();
+			   	     	    var reg1=/^[1-3]\d{10}$/;
+			   	     	      user=reg1.test(str1);
+			   	     	    
+			   	     	    if (str1.length==0) {
+			   	     	    	  $username.next(".cuowu").html("&Chi;错误！").css({
+			   	     	    	  	  color:"#c00"
+			   	     	    	  });
+			   	     	    }else{
+			   	     	    	   if (user==true) {
+			   	     	    	   	   $username.next(".cuowu").html("&radic;正确！").css({
+			   	     	    	   	   	   color:"#0bf80b"
+			   	     	    	   	   });
+			   	     	    	   }else{
+			   	     	    	   	     $username.next(".cuowu").html("&Chi;错误！").css({
+			   	     	    	  	      color:"#c00"
+			   	     	    	            });
+			   	     	    	   }
+			   	     	    }
+			   	     	     
+			   	     });
+			   	     
+			   	      //加载完成是获取一次验证码
+			   	      var $yz=$("#but-tt");
+			   	      var str_yzm="";
+			            for(var i=0; i<4; i++)
+			            {
+			            	var isnum=parseInt(Math.random()*10)%2 ;
+			            	if(isnum)
+			            	{
+			            		str_yzm+=parseInt(Math.random()*10);
+			            	}
+			            	else{
+			            		str_yzm+=String.fromCharCode(parseInt(Math.random()*26)+65);
+			            	}
+			            }
+			              
+			   	       $yz.html(str_yzm);
+			   	     
+			   	      //点击更换验证码
+			   	      
+			               $("#btn_huan").on("click",function(){
+			   	      	   
+			              var str_yy="";
+			            
+			   	      	         for(var i=0; i<4; i++)
+							            {
+							            	var isnum=parseInt(Math.random()*10)%2 ;
+							            	if(isnum)
+							            	{
+							            		str_yy+=parseInt(Math.random()*10);
+							            	}
+							            	else{
+							            		str_yy+=String.fromCharCode(parseInt(Math.random()*26)+65);
+							            	}
+							            }
+			   	           $yz.html(str_yy);
+			   	      });
+			   	     
+			   	      
+			   	      //检验验证码一致性
+			   	      
+			   	      var yzm;
+			   	      var $yzm=$("#yzm");
+			   	      
+			   	     $yzm.on("keyup",function(){
+			   	     	  
+			   	     	  var str_11=$yzm.val();
+			   	     	     
+			   	     	 if (str_11==$yz.html()) {
+			   	     	 	yzm=true;
+			   	     	 	     $("#cuowu").html("&radic;正确！").css({
+			   	     	    	   	   	   color:"#0bf80b"
+			   	     	    	   	   });
+			   	     	 }else{
+			   	     	 	yzm=false;
+			   	     	 	     $("#cuowu").html("&Chi;错误！").css({
+			   	     	    	  	      color:"#c00"
+			   	     	    	            });
+			   	     	 	 
+			   	     	 }
+			   	     	
+			   	     });
+			   	      
+			   	    // 密码验证
+			   	    
+			   	  var mima1;
+			   	  var str2;
+			   	           var $pss1=$("#password");
+			   	           
+			   	     $pss1.on("keyup",function(){
+			   	  	 
+			   	  	           str2=$pss1.val();
+			   	  	          
+			   	  	          var reg2=/^\d{6,16}$/;
+			   	  	          mima1=reg2.test(str2);
+			   	  	          
+			   	     	    if (str2.length==0) {
+			   	     	    	  $pss1.next(".cuowu").html("&Chi;错误！").css({
+			   	     	    	  	  color:"#c00"
+			   	     	    	  });
+			   	     	    }else{
+			   	     	    	   if (mima1==true) {
+			   	     	    	   	   $pss1.next(".cuowu").html("&radic;正确！").css({
+			   	     	    	   	   	   color:"#0bf80b"
+			   	     	    	   	   });
+			   	     	    	   }else{
+			   	     	    	   	     $pss1.next(".cuowu").html("&Chi;错误！").css({
+			   	     	    	  	      color:"#c00"
+			   	     	    	            });
+			   	     	    	   }
+			   	     	    }
+			   	     	     
+			   	  	
+			   	  	
+			   	  });
+			   	    
+			   	    //验证密码一致性
+			   	    
+			   	      var str3;
+			   	      var mima2;
+			   	      var $pass2=$("#password2");
+			   	      
+			   	      $pass2.on("keyup",function(){
+			   	      	
+			   	      	     str3=$pass2.val();
+			   	      	     
+			   	      	     if (str3==str2) {
+			   	      	     	  mima2=true;
+			   	      	     	  $pass2.next(".cuowu").html("&radic;正确！").css({
+			   	     	    	   	   	   color:"#0bf80b"
+			   	     	    	   	   });
+			   	      	     }else{
+			   	      	     	     mima2=false;
+			   	      	     	   $pass2.next(".cuowu").html("&Chi;错误！").css({
+			   	     	    	  	      color:"#c00"
+			   	     	    	            });
+			   	      	     	
+			   	      	     }
+			   	      	
+			   	      	
+			   	      	
+			   	      });
+			   	      
+			   	      //提交表单
+			   	     
+			   	     var arr=[];
+			   	     
+			   	      var $btn=$("#btn_s");
+			   	      
+			   	     $btn.on("click",function(){
+			   	     	
+			   	     	   if (user && yzm && mima1 && $("#checked:checked")  ) {
+			   	     	   	      alert("注册成功！");
+			   	     	   	   var obj={};
+			   	     	   	     obj.username=str1;
+			   	     	   	     obj.pass=str2;
+			   	     	   	     arr.push(obj);
+			   	     	   	     
+			   	     	   	     addCookie("user",JSON.stringify(arr),7);
+			   	     	   	     location.href="denglv.html";
+			   	     	   	 
+			   	     	   }else{
+			   	     	   	     alert("注册失败！");
+			   	     	   }
+			   	     	
+			   	     	
+			   	     	
+			   	     });
+			   	      
+			   	      
+			   	      
+			   	      
+			   	      
+			   	      
+			   	
+			   });
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			
+			   <div class="top">
+			   	      <dl>
+			   	      	    <dt>MK商城</dt>
+			   	      	    <dd>MK网上商城</dd>
+			   	      </dl>
+			   	      <p>已经有MK商城账号？ <a href="denglv.html">立即登录  </a></p>
+			   </div>
+			  <div class="content">
+			  	    <h2>30秒快速注册，加入MK商城</h2>
+			  	      <div class="content-1">
+			  	      	        <ul id="ul_btn">
+			  	      	        	  <li class="ul-border"><img src="../img/p_p.jpg"/><p>用手机号注册</p></li>
+			  	      	        	  <li>其他</li>
+			  	      	        </ul>
+			  	      	        <p class="txt tp">
+			  	      	        	<label><span> * </span>手机号：</label>
+			  	      	              <input type="text" id="username" />
+			  	      	              <strong class="cuowu"></strong>
+			  	      	        </p>
+			  	      	          <p class="tab-p">请填写手机号码</p>
+			  	      	          <p class="p_p">
+			  	      	        	<label><span> * </span>验证码：</label>
+			  	      	              <input type="text" id="yzm" class="tab_input"/>
+			  	      	                 <button class="but-tt" id="but-tt"></button><a id="btn_huan">换一张</a>
+			  	      	                 <strong class="cuowu" id="cuowu"></strong>
+			  	      	        </p>
+			  	      	         <p class="tab-p">请填写图片验证码</p>
+			  	      	          <p class="p_p">
+			  	      	        	<label><span> * </span>验证码：</label>
+			  	      	              <input type="text" class="tab_input" />
+			  	      	              <button class="but-tt">获取短信验证码</button>
+			  	      	        </p>
+			  	      	         <p class="tab-p">请填写手机号码，然后点击获取验证码</p>
+			  	      	          <p>
+			  	      	        	<label><span> * </span>密码：</label>
+			  	      	              <input type="password" id="password" />
+			  	      	              <strong class="cuowu"></strong>
+			  	      	        </p>
+			  	      	         <p class="tab-p">6-16位字母和数字的组合，不可用特殊字符</p>
+			  	      	         <p>
+			  	      	        	<label><span> * </span>确认密码：</label>
+			  	      	              <input type="password" id="password2"/>
+			  	      	              <strong class="cuowu"></strong>
+			  	      	        </p>
+			  	      	           <p class="tab-p">再次输入密码</p>
+			  	      	           <p class="radio"><input type="checkbox" checked="checked" id="checked"/>同意<a href="#">《商城用户协议》</a><a href="#">《隐私权说明》</a></p>
+			  	                  <p class="sumb"><input type="button" id="btn_s" value="注册"/></p>
+			  	      </div>
+			  	      <ul class="ul_list">
+			  	      	   <li class="ul_list_p"><p>如果您已经注册，请 <a href="#">直接登录</a>或者用以下方式登录：</p></li>
+			  	      	   <li class="ul_list_1"><img src="../img/sina.jpg"/><a href="#">新浪微博登录</a></li>
+			  	      	   <li class="ul_list_2"><img src="../img/tencent.jpg"/><a href="#">腾讯QQ登录</a></li>
+			  	      	   <li class="ul_list_3"><img src="../img/ali.jpg"/><a href="#">支付宝账号登录</a></li>
+			  	      	   <li class="ul_list_4"><img src="../img/baidu.jpg"/><a href="#">百度账号登录</a></li>
+			  	      </ul>
+			  </div>
+			
+			
+		</div>
+		<div class="bottom">
+				  <div class="bottom-m">
+				  	   <ul>
+				  	   	    <li><a href="#">关于MK商城</a> </li>
+				  	   	    <li class="border-y"><a href="#">联系我们</a> </li>
+				  	   	    <li><a href="#">帮助中心</a> </li>
+				  	   </ul>
+				  	   <span>&copy; MK商城 版权所有</span>
+				  </div>
+			</div>
+	</body>
+</html>

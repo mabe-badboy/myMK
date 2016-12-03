@@ -1,0 +1,534 @@
+
+img{
+	border: none;
+}
+a:hover{
+	 text-decoration: underline;
+	 color: #c00;
+}
+
+/**************窗口两边的东西********/
+.window-left{
+	  position: fixed;
+	  top: 55%;
+	  left: 0;
+	  width: 23px;
+	  height: 82px;
+	  background: url(../img/33.png) no-repeat;
+}
+
+
+.window-right{
+	  position: fixed;
+	  width: 37px;
+	  height: 100%;
+	  right: 0;
+	  top: 0;
+	  background: #2d2d2d;
+	  z-index: 50;
+}
+
+.right-1{
+	  width: 37px;
+	  height: 22px;
+	  background: url(img/right-1.png) no-repeat  center;
+	  position: relative;
+	  top: 25%;
+	  left: 0;
+}
+
+.right-time{
+	  width: 37px;
+	  height: 21px;
+	  background: url(img/right-time.png) no-repeat center top;
+	  position: relative;
+	  top: 35%;
+	  left: 0;
+	
+}
+
+
+/* *************购物车*************/
+.right-car{
+	   width: 37px;
+	   height: 35px;
+	   background: url(img/right-car.png) no-repeat center bottom;
+	   position: relative;
+	   top: 45%;
+	   left: 0;
+}
+
+/* *************购物车计数*************/
+.car{
+	  width: 15px;
+	  height: 15px;
+	  border-radius: 15px;
+	  background: #f33;
+	  position: absolute;
+	  top: 0px;
+	  right: 5px;
+	  text-align: center;
+	  line-height: 15px;
+	  color: #fff;
+}
+
+.right-p{
+	  width: 30px;
+	  height: 40px;
+	 color: #FFFFFF;
+	 position: relative;
+	 top: 70%;
+	 left: 5px;
+}
+
+.right-top{
+	  width: 37px;
+	  height: 37px;
+	  background:url(img/right-top.jpg) no-repeat center center;
+	  position: relative;
+	  top: 75%;
+	  left: 0;
+}
+
+
+
+/**************顶部*****************/
+
+.header{
+	font-size: 12px;
+	 width: 100%;
+	 height: 30px;
+	 background: #f5f5f5;
+	 border-bottom: 1px solid #e6e6e6;
+}
+.header-1{
+	 width: 1198px;
+	 height: 30px;
+	 margin: 0 auto;
+}
+/************顶***左***********/
+.ul1{
+	
+	width: 380px;
+	height: 30px;
+	 float: left;
+}
+.ul1 li{
+	color: #666;
+	 margin-right: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+
+/***********购物车的数量**********/
+.car-number{
+	  color: #FC1212;
+}
+
+/************顶***右***********/
+.ul2{
+	 height: 30px;
+	 float: right;
+}
+.ul2 li{
+	color: #666;
+	height: 15px;
+	  float: left;
+	  margin-top: 10px;
+	  margin-left: 20px;
+}
+.ul2 li a{
+	 color: #666;
+}
+.ul2 li .img{
+	 border: none;
+	 height: 15px;
+	 width: 10px;
+	 float: left;
+}
+.a_line{
+	width: 75px;
+	height: 15px;
+	
+}
+.a_line span{
+	display: block;
+	height: 15px;
+	width: 50px;
+	float: left;
+	margin-left: 3px;
+	line-height: 15px;
+}
+
+.a_line img{
+	float: left;
+}
+.img1{
+	margin-top: 4px;
+}
+
+.border_right{
+	 border-right: 1px solid #666;
+	 padding-right: 15px;
+}
+
+
+
+
+
+/*************搜索****************/
+.search{
+	 margin: 0 auto;
+	 width: 1198px;
+	 height: 90px;
+}
+
+
+.search  .search_o{
+	  width: 1198px;
+	  height: 50px;
+	  margin-top: 35px;
+}
+
+
+.logo {
+	 width: 370px;
+	 height: 50px;
+	 float: left;
+
+ color: #666;
+}
+.logo dt{
+	 width: 182px;
+	 height: 50px;
+	 float: left;
+	 border-right: 1px solid #ccc;
+	 padding-right: 22px;
+	 text-align: center;
+	 line-height: 50px;
+	 font-size: 45px;
+	 font-weight: bold;
+	 
+}
+
+.logo dd{
+	  width:160px ;
+	  height: 50px;
+	  float: left;
+	  line-height: 50px;
+	  text-indent: 15px;
+}
+
+/**********搜索*********/
+
+.search .search_p{
+	 display: inline-block;
+	 float: left;
+	 width: 534px;
+	 height: 35px;
+	background:  #c40000;
+	 margin-left: 50px;
+	 border: 3px solid #c40000;
+}
+
+.search .search_p input{
+	  border: none;
+	  float: left;
+	  width: 445px;
+	  height: 32px;
+}
+.search .search_p button{
+	  border: none;
+	  width: 87px;
+	  height: 35px;
+	  color: #fff;
+	  font-size: 16px;
+	  background:  #c40000;
+}
+
+.search .search_h{
+	display: block;
+	float: right;
+	    width: 178px;
+	    height: 42px;
+	    background: url(img/hang.png) no-repeat center;
+}
+
+
+.search .search_u{
+	  width: 1198px;
+	  height: 36px;
+}
+
+.search_u li{
+	   margin-right: 15px;
+	   float: left;
+}
+.search_u li a{
+	  color: #999999;
+}
+
+.search_u li a:hover{
+	  text-decoration: underline;
+	  color: #fe0606;
+}
+
+ .search  .margin_left{
+	    margin-left:420px ;
+}
+
+
+/********底部***********/
+
+.bottom{
+	  width: 100%;
+	  height: 544px;
+	  border-top: 1px solid #ccc;
+}
+
+/**************品质赔付***********/
+.bottom .bottom_top{
+	  height: 50px;
+	  width: 1198px;
+	  margin: 0 auto;
+	  margin-top: 30px;
+	  margin-bottom: 30px;
+}
+
+.bottom_top dl{
+	 width: 160px;
+	 height: 110px;
+	 float: left;
+	 margin-right: 50px;
+	 
+}
+.bottom_top dl dt{
+	   width: 53px;
+	   height: 50px;
+	   float: left;
+}
+
+.bottom_top dl dd{
+	   width: 75px;
+	   height: 50px;
+	   float: left;
+	   line-height: 50px;
+	   font-size: 17px;
+	   color: #333;
+	   margin-left: 20px;
+}
+.dl1{
+	  background: url(img/11.png) no-repeat;
+}
+.dl2{
+	  background: url(img/12.png) no-repeat;
+}
+.dl3{
+	  background: url(img/13.png) no-repeat;
+}
+
+.dl4{
+	  background: url(img/14.png) no-repeat;
+}
+
+.dl5{
+	  background: url(img/15.png) no-repeat;
+}
+
+/*****************商城细节左***************/
+
+
+
+.bottom_list{
+	  width: 1198px;
+	  height: 183px;
+	  margin: 0 auto;
+	  border-top: 1px solid #ccc;
+	  padding-top: 25px;
+}
+
+.bottom_list  .bottom_ul{
+	   width: 700px;
+	   height: 180px;
+	   float: left;
+	
+}
+
+.bottom_list  .bottom_ul li{
+	  width: 80px;
+	  height: 180px;
+	  margin-right: 85px;
+	   float: left;
+}
+
+.bottom_list  .bottom_ul dl{
+	    width: 80px;
+	  height: 180px;
+	  color: #666;
+}
+
+.bottom_list .bottom_ul dl dt{
+	   font-weight: bold;
+	   margin-bottom: 15px;
+	
+}
+
+.bottom_ul dl dd{
+        margin-bottom: 15px;
+}
+
+
+/*****************商城细节右***************/
+
+
+.bottom_list  .dl_left{
+	  width: 200px;
+	  height: 140px;
+	  float: left;
+	 margin-right: 80px;
+}
+
+.bottom_list  .dl_right {
+	  width: 200px;
+	  height: 140px;
+	  float: left;
+}
+
+
+.bottom_list .dl_left dt{
+	    width: 50px;
+	    height: 140px;
+	    float: left;
+}
+
+.bottom_list .dl_left dd{
+	    float: left;
+	  width: 120px;
+	  margin-left: 15px;
+	  line-height: 29px;
+}
+
+.bottom_list .dl_left dd span{
+	   font-size: 17px;
+	    font-weight: bold;
+	
+}
+
+
+.bottom_list .dl_right dt{
+	    width: 50px;
+	    height: 140px;
+	    float: left;
+	
+}
+
+.bottom_list .dl_right dd{
+	    width: 120px;
+	    float: left;
+	    margin-left: 15px;
+	      line-height: 29px;
+}
+
+.bottom_list  .dl_right dd span{
+	   font-size: 17px;
+	    font-weight: bold;
+	
+}
+
+
+.dl_left dt{
+	   background: url(img/kefu.png) no-repeat top center;
+}
+
+
+.dl_right dt{
+	   background:url(img/hezuo.png) no-repeat top center;
+}
+
+
+
+/****************最底部***************/
+
+.bottom-b{
+	  width: 100%;
+	  height: 225px;
+	  background: #2d2d2d;
+}
+
+
+
+.bottom_bottom{
+	   width: 1190px;
+	   height: 160px;
+	   margin: 0 auto;
+}
+.bottom_bottom h4{
+	   width: 70px;
+	   height: 45px;
+	   float: left;
+}
+
+.b-list{
+	   width: 1190px;
+	   height: 45px;
+	   float: left;
+	   color: #fff;
+	   margin-top: 20px;
+	   margin-bottom: 18px;
+}
+
+.b-list li{
+	   float: left;
+	   margin-top: 10px;
+	   margin-right: 8px;
+	   border-right: 1px solid #546654;
+	  padding-right: 8px;
+}
+
+.b-list  .no-border{
+	   border: none;
+	   color: #ccc;
+}
+
+.b-list .ma-right{
+	margin-right: 180px;
+}
+
+ .b-list  .ma-left{
+ 	   margin-left: 80px;
+ }
+
+.c-list,.d-list{
+	   width: 1190px;
+	   height: 20px;
+	   float: left;
+	   
+}
+
+.c-list li{
+	  float: left;
+	  margin-right: 10px;
+	  border-right: 1px solid #546654;
+	  padding-right: 10px;  
+	  color: #fff;
+}
+
+.d-list{
+	  margin-top: 28px;
+}
+.d-list li{
+	  float: left;
+	  margin-right: 10px;
+	  border-right: 1px solid #546654;
+	  padding-right: 10px;  
+	  color: #999;
+}
+
+
+.bottom_bottom p{
+	  display: inline-block;
+	   color: #999;
+	   margin-top: 28px;
+}
+

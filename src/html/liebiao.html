@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表(懒加载)</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/liebiao.css" />
+		<link rel="stylesheet" href="../xcarousel/jquery.xcarousel.css" />
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../xcarousel/jquery.xcarousel.js" ></script>
+		<script>
+			  $(function(){
+			  	
+			  	  $(".nav-fade").hide();
+			  	   //二级菜单
+			  	       var $li= $("#list li");
+			  	     
+			  	     //鼠标进入 / 离开小菜单
+			  	        $li.on("mouseenter",function(){
+			  	    	      var index=$(this).index();
+			  	    	    $li.eq(index).addClass("active");
+			  	    	    $(".nav-boom").show();
+			  	    	    $(".nav-boom li").eq(index).show().siblings().hide();
+			  	    	      
+			  	    	 
+			  	    }).on("mouseleave",function(){
+			  	    	           var index=$(this).index();
+			  	    	    $li.eq(index).removeClass("active");
+			  	    	      $(".nav-boom").hide();
+			  	    	    
+			  	    });
+			  	    
+			  	     
+			  	    
+			  	     //移入/移出 商品分类的时候二级菜单显示/隐藏
+				  	    var $h4=$("#h4");
+				  	    $h4.on("mouseenter",function(){
+				  	    	   $(".nav-fade").show();
+				  	    }).on("mouseleave",function(){
+				  	    	  $(".nav-fade").hide();
+				  	    });
+			  	    
+			  	    $(".nav-fade").on("mouseenter",function(){
+			  	    	   $(".nav-fade").show();
+			  	    }).on("mouseleave",function(){
+			  	    	 $(".nav-fade").hide();
+			  	    });
+			  	   
+			  	    
+			  	       //鼠标进入 / 离开展开的二级菜单
+			  	    $(".nav-boom li").on("mouseenter",function(){
+			  	    	   $(".nav-fade").show();
+			  	    	      var index=$(this).index();
+			  	    	      $li.eq(index).addClass("active");
+			  	    	    $(".nav-boom").show();
+			  	    	    $(".nav-boom li").eq(index).show().siblings().hide();
+			  	    	
+			  	    }).on("mouseleave",function(){
+			  	    	 $(".nav-fade").hide();
+			  	    	     $li.removeClass("active");
+			  	    	  $(".nav-boom").hide();
+			  	    });
+			  	   
+			  	     //点击回到顶部
+			  	    $(".right-top").on("click",function(){
+			  	    	 
+			  	    	   $(window).scrollTop(0);
+			  	    	  
+			  	    });
+			  	
+			  	 //品牌翻页
+			  	 var $list_h=$("#turn-list");
+			  	 $(".turn-left").on("click",function(){
+			  	 	  var $left=$list_h.offset().left;
+			  	 	   $list_h.animate({
+			  	 	   	     left:$left+=360
+			  	 	   });
+			  	 });
+			  	
+			  	$(".turn-right").on("click",function(){
+			  	 	  var $lf=$list_h.offset().left;
+			  	 	   $list_h.animate({
+			  	 	   	     left:$lf-960
+			  	 	   });
+			  	 });
+			  	
+			  	
+			  	
+			  	
+			  	$.ajaxSetup({
+			  		type:"get",
+			  		url:"../data/goodlist.json",
+			  		dataType:'json',
+			  		success:function(res){
+			  			$.each(res, function(idx,item) {    
+			  				      
+			  				     var $oDiv=$("<div/>").addClass("datalist"); 
+			  				    $("<img src='"+item.imgurl+"' />").appendTo($oDiv);
+			  				    $("<a href='xiangqing.html'>"+item.title+"</a>").appendTo($oDiv);
+			  				    $("<b>&yen;"+item.price+"</b>").appendTo($oDiv);  
+			  				    var $div1=$("<div class='xs-pj'></div>");
+			  				    $("<i class='xs'>销量数<span> "+item.xsl+"</span></i><i class='pj'>评价数 <span>"+item.pj+"</span></i>").appendTo($div1);
+			  				    $div1.appendTo($oDiv);
+			  				    $("<p>"+item.dp+"</p>").appendTo($oDiv);
+			  				    $oDiv.appendTo($(".wrap"));
+			  			});
+			  			
+			  		}
+			  	});
+			  	
+			  	$.ajax();
+			  	
+              
+			  	
+			  		// 懒加载效果
+			// 给window绑定scroll事件，当差不多滚动到底部是加载更多内容
+			$(window).on('scroll',function(){
+				// 获取滚动条滚动过的距离
+				var scrollTop = $(window).scrollTop();
+
+				// 当差不多滚动到底部是加载更多内容
+				if(scrollTop >= $(document).height() - $(window).height() - 350){
+					$.ajax();
+				}
+			})
+
+
+
+			  	     //改变用户名
+			  	    var $deng=$("#denglv");
+			  	     var str123=getCookie("user1");
+			  	     var str11=JSON.parse(str123);
+			  	      if (str11) {
+			  	      	$deng.html(str11);
+			  	      }
+
+                  	     	 
+			  	     $(".tuichu").on("click",function(){
+			        	  
+			        	    $("#denglv").html("登录");
+			        	     
+			        	     removeCookie("user1");
+			        	
+			        });
+			      
+
+			  });
+		</script>
+	</head>
+	<body>
+			<div class="header">
+		<div class="header-1">
+			  <ul class="ul1">
+			  	   <li>商城首页</li>
+			  	   <li><span>Hi`欢迎来到MK商城 , </span><a href="denglv.html" id="denglv"> 登录</a></li>
+			  	   <li><a href="#" class="tuichu">退出</a></li>
+			  </ul> 
+			  <ul class="ul2">
+			  	     <li><a hrel="#">我的订单</a></li>
+			  	     <li>买家中心<img src="../img/point.png"/></li>
+			  	     <li>购物车<span>0</span>件</li>
+			  	     <li class="border_right"><a href="#">帮助中心</a></li>
+			  	     <li class="a_line"><img class="img" src="../img/p_p.jpg"/><span>手机商城</span><img class="img1" src="../img/point.png"/></li>
+			  	    <li><a href="#">MK会员</a></li>
+			  	     <li><a href="#">商家入驻</a></li>
+			  	     <li>联系客服<img src="../img/point.png"/></li>
+			  </ul>
+		</div>
+	</div>	
+	 		<div class="search">
+	 			   <div class="search_o">
+					 		     <dl class="logo">
+					 		     	 <dt>MK商城</dt>
+					 		     	 <dd>MK网上商城</dd>
+					 		     </dl>
+					 			  <p class="search_p"><input type="text"><button>搜索</button></p>
+					 			  <span class="search_h"></span>
+					 			    	
+	 			   </div>
+	 			  <ul class="search_u">
+	 			  	    <li class="margin_left"><a href="#">三星7s edge</a></li>
+	 			  	    <li><a href="#">华为p9</a></li>
+	 			  	    <li><a href="#">戴尔小xps仅4999！</a></li>
+	 			  	    <li><a href="#">GTX1060</a></li>
+	 			  	     <li><a href="#">九阳豆浆机直降100！</a></li>
+	 			  	    <li><a href="#">热销机械键盘</a></li>
+	 			  </ul>
+	 		</div>
+	 	
+	 	<div class="nav">
+	 		<!--展开的二级菜单-->
+	 		    <ul class="nav-boom">
+	 	               <!-- 手机  -->
+	 	                  <li>
+	 		   					     <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>手机通讯</dt>
+	 		   					  	   	    <dd>手机 丨 老人机 <br />
+	 		   					  	   	    华为  丨 苹果  丨  三星  丨  魅族  丨  oppo 丨  小米  丨  HTC  丨 乐视  丨  vivo  丨  sony  丨  飞利浦  <br />
+	 		   					  	   	     诺基亚  丨  摩托罗拉 丨 中兴
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>手机配件</dt>
+	 		   					  	   	    <dd>  保护套  丨 充电器  丨  数据线  丨  手机电池  丨  手机贴膜 丨  手机附件 <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd3">
+	 		   					  	   	    <dt>通讯设备</dt>
+	 		   					  	   	    <dd> 移动pos机
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		   			<!-- 笔记本 -->
+	 		   			   <li>
+	 		   					         <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>笔记本</dt>
+	 		   					  	   	    <dd> 游戏本 丨  游戏本  |   商务本  |   超薄本   |   影音娱乐本  |   校园学生本  <br />
+	 		   					  	   	    飞行堡垒    |   戴尔灵越   |   联想小Y  |    15英寸大屏   |   酷睿i7  <br />
+	 		   					  	   	  |  Alienware   |  MSI微星
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>平板</dt>
+	 		   					  	   	    <dd>  微软   |   安卓  |    苹果iOS   |   10.1英寸  |    娱乐平板   |    商务平板    |    2合1平板电脑  <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd3">
+	 		   					  	   	    <dt>品牌整机</dt>
+	 		   					  	   	    <dd>  一体机   |    商用电脑    |    家用电脑   |    时尚电脑   |    游戏电脑   |   酷睿i7   |   发烧级独立显卡 
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		   		<!-- 摄影 -->
+	 		   		         <li>
+	 		   					        <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>摄影摄像</dt>
+	 		   					  	   	    <dd>  数码相机    |    单反相机   |   运动相机  |   摄像机 |   镜头  |   户外器材 |   影棚器材   |   数 码相框 <br/> 佳能   |  索尼 |   尼康 |  三星  |卡 西欧   |   奥林巴斯
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>数码配件</dt>
+	 		   					  	   	    <dd> 三脚架/云台   |   闪光灯配件  |   单反手柄  |   机身附件   |  镜头附件    | 存储卡  |   闪光灯  |  <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		   				
+	 		   				<!-- 游戏 -->
+	 		   			     <li>
+	 		   					         <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>游戏电玩</dt>
+	 		   					  	   	    <dd>  体感游戏机    |   PlayStation 4    |   Xbox One  <br/>  索尼   |   微软 </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>游戏本</dt>
+	 		   					  	   	    <dd>  玩家国度    |   战神   |    Alienware   |    雷蛇  <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>	
+	 		   				<!-- 硬件   -->
+	 		   				   <li>
+	 		   					     <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>DIY硬件</dt >
+	 		   					  	   	    <dd> DIY主机   |   显卡  |   主板  |   固态硬盘  |   散热器   |  硬盘  |  内存 |  机箱  | <br/>
+	 		   					  	   	    	CPU  |  电源  |  光驱华硕  |  技嘉   | <br />
+	 		   					  	   	    	MSI微星  |  三星   |   联想  |  浦科特  |   金士顿  |   威刚  |  Intel  |  九州风神 
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>外设配件</dt>
+	 		   					  	   	    <dd> 耳机   |   音箱  |   U盘   |   摄像头  |   鼠标垫 |   键盘  |   鼠标  |   移动硬盘  <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd3">
+	 		   					  	   	    <dt>网络设备</dt>
+	 		   					  	   	    <dd> 路由器    |    网络存储  
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		   				<!--  智能生活  -->	
+	 		   							   <li>
+	 		   					       <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>智能生活</dt > 
+	 		   					  	   	    <dd>智能称  |  智能家居  |   智能穿戴  |   智能手表  |  智能手环 |  智能插座 |   智能创意  | <br / >
+	 		   					  	   	    智能电子 |   智能机器人  |   智能摄像机 |   智能头戴设备  <br />
+	 		   					  	   	     HTC  |  乐心 |华  为
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>智能配件</dt>
+	 		   					  	   	    <dd>    MP3   |   录音笔  |   摄像头   |   移动电源   |   蓝  牙音箱 |    插座/插排 <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd3">
+	 		   					  	   	    <dt>智能投影</dt>
+	 		   					  	   	    <dd>  投影机吊架  |   3D眼镜   |    投影幕布   |   投影机 
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		               <!--  家用电器  -->	
+	 		                    <li>
+	 		   					     <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>家用设备</dt>
+	 		   					  	   	    <dd>  手柄   |   游戏机   |    掌  上游戏机 
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>办公设备</dt>
+	 		   					  	   	    <dd>  投影幕布  |   POS机   |    投影仪拉卡拉   |   极米  |   坚果  |   飞利浦   <br />		
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li>
+	 		                   <!--  生活电器  -->	
+	 		                  <li>
+	 		   					     <p>
+	 		   					  	    	<span class="f-w">服务保障</span>
+	 		   					  	    	 <img src="../img/11-1.png" />
+	 		   					  	    	<span>行货保证</span> 
+	 		   					  	    	<img src="../img/12-1.png" />
+	 		   					  	    	<span>发票保障</span>
+	 		   					  	    	<img src="../img/13-1.png" />
+	 		   					  	    	<span>顺丰包邮</span>
+	 		   					  	    	<img src="../img/14-1.png" />
+	 		   					  	    	<span>无忧退换</span>
+	 		   					  	    	<img src="../img/15-1.png" />
+	 		   					  	    	<span>先行赔付</span>
+	 		   					  	   </p>
+	 		   					  	   
+	 		   					  	   
+	 		   					  	   <dl class="dd1">
+	 		   					  	   	    <dt>生活电器</dt>
+	 		   					  	   	    <dd>  加湿器    |    电暖气   |   收音机   | <br />
+	 		   					  	   	    吸尘器   |   护眼灯      |小工具   |   驱蚊防蚊   |   扫地机器人   |   空 气净化器   飞行堡垒   <br /> 
+	 		   					  	   	     |   戴尔灵越   |   联想小Y  |    15英寸大屏   |   酷睿i7 
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd2">
+	 		   					  	   	    <dt>个护</dt>
+	 		   					  	   	    <dd>  洁面仪   |   剃须刀   |   电吹风 |   电子秤   |   按摩器   |   血压计 <br />
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   					  	    <dl class="dd3">
+	 		   					  	   	    <dt>家用电器</dt>
+	 		   					  	   	    <dd>  平板电视   |   迷你音响  |    电视盒子   烤箱  |     电水壶   |    蒸蛋器  |   酸奶机   |    
+	 		   					  	   	    </dd>
+	 		   					  	   </dl>
+	 		   				</li> 
+	 		                   
+	 		    </ul>
+	 		
+	 		<!--二级菜单-->
+	 		       <div class="nav-list">
+	 		       	      <h4 id="h4">商品分类</h4>
+	 		       	    <div class="nav-fade">
+	 		       	      <ul class="nav-ul" id="list">
+	 		       	      	   <li><span>手机通讯/手机配件</span></li>
+	 		       	      	   <li><span>笔记本/平板/品牌整机</span></li>
+	 		       	      	   <li><span>摄影摄像/数码配件</span></li>
+	 		       	      	   <li><span>游戏电玩/游戏本</span></li>
+	 		       	      	   <li><span>DIY硬件/外设配件</span></li>
+	 		       	      	   <li><span>智能生活/智能设备</span></li>
+	 		       	      	   <li><span>家用设备/办公设备</span></li>
+	 		       	      	   <li><span>生活电器/个护/家用电器</span></li>
+	 		       	      </ul>
+	 		       	      <div>
+	 		       	      	  <img src="../img/timer.gif"/>
+	 		       	      </div>
+	 		       	    </div>    
+	 		       </div>
+	 		       
+	 		     <!--导航-->
+	 		     <ul class="nav-n">
+	 		     	    <li class="line-red">首页</li>
+	 		     	    <li>团购</li>
+	 		     	    <li>手机馆</li>
+	 		     	    <li>智能之家</li>
+	 		     	    <li>DIY攒机馆</li>
+	 		     	    <li>限时抢购</li>
+	 		     </ul>
+	 	</div>
+	 	
+	 	<!--左右两边的挂件和购物车-->
+	 	  <div class="window-left"></div>
+	 	  <div class="window-right">
+	 	  	      <div class="right-1"> </div>
+	 	  	      <p class="right-time"></p>
+	 	  	      <div class="right-car">
+	 	  	      	   <span id="car" class="car">0</span>
+	 	  	      </div>
+	 	  	      <p class="right-p">建议反馈</p>
+	 	  	      <p class="right-top"></p>
+	 	  </div>
+	 	  
+	 	  <div class="huawei">
+	 	  	   <div class="img-huawei">
+	 	  	   	  <img src="../img1/huawei.jpg" />
+	 	  	   </div>
+	 	  	 <!-- //品牌列表-->
+	 	  	  <div class="fanye">
+	 	  	  	 <span class="turn-left"><</span>
+			 	  	   <div class="huawei-list">
+			 	  	   	  <ul id="turn-list">
+			 	  	   	  	<li><img src="../img1/1.jpg"/><p>华为Y635</p></li>
+			 	  	   	  	<li><img src="../img1/2.jpg"/><p>华为Ascend G7</p></li>
+			 	  	   	  	<li><img src="../img1/3.jpg"/><p>华为Ascend p7</p></li>
+			 	  	   	  	<li><img src="../img1/4.jpg"/><p>华为c199</p></li>
+			 	  	   	  	<li><img src="../img1/5.jpg"/><p>华为p8 lite</p></li>
+			 	  	   	  	<li><img src="../img1/6.jpg"/><p>华为g9 plus</p></li>
+			 	  	   	  	<li><img src="../img1/7.jpg"/><p>华为mates</p></li>
+			 	  	   	  	<li><img src="../img1/8.jpg"/><p>华为麦芒4</p></li>
+			 	  	   	  	<li><img src="../img1/9.jpg"/><p>华为p9 plus</p></li>
+			 	  	   	  	<li><img src="../img1/10.jpg"/><p>华为g7 plus</p></li>
+			 	  	   	  	<li><img src="../img1/11.jpg"/><p>华为麦芒5</p></li>
+			 	  	   	  	<li><img src="../img1/12.jpg"/><p>华为mate7</p></li>
+			 	  	   	  	<li><img src="../img1/13.jpg"/><p>华为p8</p></li>
+			 	  	   	  	<li><img src="../img1/14.jpg"/><p>华为畅想5s</p></li>
+			 	  	   	  	<li><img src="../img1/15.jpg"/><p></p>华为畅想5</span></li>
+			 	  	   	  	<li><img src="../img1/16.jpg"/><p>华为G9 青春版</p></li>
+			 	  	   	  	<li><img src="../img1/17.jpg"/><p>华为p9</p></li>
+			 	  	   	  	<li><img src="../img1/18.jpg"/><p>华为mate 8</p></li>
+			 	  	   	  </ul>
+			 	  	   </div>
+			 	 <span class="turn-right">></span> 	   
+			  </div>	  	   
+	 	  </div>
+	 	  
+	 	  <!-- 中间内容 -->
+	 	  <div class="lone-h3">
+	 	  	 <h4>MK商城服务保障：</h4>
+	 	  	 <span class="lone-h3-1">行货保证</span>
+	 	  	 <span class="lone-h3-2">发票保障</span>
+	 	  	 <span class="lone-h3-3">顺丰包邮</span>
+	 	  	 <span class="lone-h3-4">无忧退款</span>
+	 	  	 <span class="lone-h3-5">先行赔付</span>
+	 	  </div>
+	 	  <ul class="ul-list">
+	 	  	   <li class="dangqian">默认</li>
+	 	  	   <li>高人气</li>
+	 	  	   <li>高销量</li>
+	 	  	   <li>价格由低到高</li>
+	 	  	   <li>价格由高到低</li>
+	 	  	   <li>发货地</li>
+	 	  	   <li class="li-input"><input type="text" placeholder="￥"/>-<input type="text" placeholder="￥"/></li>
+	 	       <li><input type="checkbox" />限时抢购</li>
+	 	       <li><input type="checkbox" />店铺活动</li>
+	 	  </ul>
+	 	  
+	 	  <div class="wrap clearfix">
+	 	  	     <!--<div class="datalist">
+	 	  	     	<img src="../imgs/1.jpg" />
+	 	  	     	<p>华为 Mate 8（全网通）6寸 双卡双待 3GB+32GB 爱科入网价 1999！！！ </p>
+	 	  	        <b>&yen;2780.00</b>
+	 	  	        <div class="xs-pj">
+	 	  	        	<b class="xs">销量数 2</b><b class="pj">评价数 <span>0</span></b>
+	 	  	        </div>
+	 	  	        <p>4G数码专营店</p>
+	 	  	     </div>-->
+	 	  </div>
+	 	  
+	 	  
+	 	 	<!--  底部    -->
+	 	<div  class="bottom">
+	 		   <div  class="bottom_top">
+		 		   	     <dl class="dl1">
+		 		   	     	   <dt></dt>
+		 		   	     	   <dd>行货保证</dd>
+		 		   	     </dl>  
+		 		   	     <dl class="dl2">
+		 		   	     	   <dt></dt>
+		 		   	     	   <dd>发票保证</dd>
+		 		   	     </dl>
+		 		   	       <dl class="dl3">
+		 		   	     	   <dt></dt>
+		 		   	     	   <dd>顺丰包邮</dd>
+		 		   	     </dl>
+		 		   	       <dl class="dl4">
+		 		   	     	   <dt></dt>
+		 		   	     	   <dd>无忧退换</dd>
+		 		   	     </dl>
+		 		   	      <dl class="dl5">
+		 		   	     	   <dt></dt>
+		 		   	     	   <dd>先行赔付</dd>
+		 		   	     </dl>
+	 		   </div>
+	 		  
+	 		  <div class="bottom_list">
+			 		  	     <ul class="bottom_ul">
+					 		  	     	  <li>
+					 		  	     	  	   <dl>
+					 		  	     	  	   	      <dt>购物指南</dt>
+					 		  	     	  	   	     <dd>账号注册</dd>
+					 		  	     	  	   	     <dd>购物流程</dd>
+					 		  	     	  	   	     <dd>付款方式</dd>
+					 		  	     	  	   </dl>
+					 		  	     	  </li>
+					 		  	     	  <li>
+					 		  	     	  	   <dl>
+					 		  	     	  	   	      <dt>售后服务</dt>
+					 		  	     	  	   	     <dd>先行赔付</dd>
+					 		  	     	  	   	     <dd>退款退货流程</dd>
+					 		  	     	  	   	     <dd>投诉举报</dd>
+					 		  	     	  	   </dl>
+					 		  	     	  </li>
+					 		  	     	    <li>
+					 		  	     	  	   <dl>
+					 		  	     	  	   	      <dt>商城保障</dt>
+					 		  	     	  	   	     <dd>行货保障</dd>
+					 		  	     	  	   	     <dd>如实描述<dd>
+					 		  	     	  	   	     <dd>物流配送</dd>
+					 		  	     	  	   	     <dd>48小时发货</dd>
+					 		  	     	  	   	     <dd>发票保障</dd>
+					 		  	     	  	   </dl>
+					 		  	     	  </li>
+					 		  	     	    <li>
+					 		  	     	  	   <dl>
+					 		  	     	  	   	      <dt>商家服务</dt>
+					 		  	     	  	   	     <dd>商家中心</dd>
+					 		  	     	  	   	     <dd>商城规则</dd>
+					 		  	     	  	   	     <dd>商家帮助</dd>
+					 		  	     	  	   </dl>
+					 		  	     	  </li>
+			 		  	     </ul>
+	 		  	            <dl class="dl_left">
+	 		  	            	   <dt></dt>
+	 		  	            	   <dd><span>400-678-0068</span><br/>工作日 9:00 - 18:00<br/><img src="../img/aa.png"/>关注新浪微博</dd>
+	 		  	            </dl>
+	 		  	             <dl class="dl_right">
+	 		  	            	   <dt></dt>
+	 		  	            	   <dd><span>商家合作</span><br/>错过天猫？别错过我们<br />MK商城开启新的旅程！<br /><img src="../img/btb.jpg"/></dd>
+	 		  	            </dl>
+	 		  </div>
+	 		
+	 		 <div class="bottom-b">
+	 		 	      <div class="bottom_bottom">
+	 		 	            <ul class="b-list">
+	 		 	            	    <li class="no-border">合作伙伴 ： </li>
+	 		 	            	    <li>电子商务平台</li>
+	 		 	            	    <li>卷皮网</li>
+	 		 	            	    <li>华为商城</li>
+	 		 	            	    <li>中国电子银行网</li>
+	 		 	            	    <li>三帝贸易网</li>
+	 		 	            	    <li>团购</li>
+	 		 	            	    <li>eNet商城</li>
+	 		 	            	    <li>家具网</li>
+	 		 	            	    <li>易趣</li>
+	 		 	            	    <li>手表品牌大全</li>
+	 		 	            	    <li>钻石</li>
+	 		 	            	    <li class="ma-right">伊秀女性网</li>
+	 		 	            	    <li class="ma-left">电子产品世界</li>
+	 		 	            	    <li>广告网</li>
+	 		 	            	    <li>易购网</li>
+	 		 	            	    <li>华强电子网</li>
+	 		 	            	    <li>挖东西比价网</li>
+	 		 	            </ul>  
+	 		 	            <ul class="c-list">
+	 		 	            	      <li>MK会员</li>
+	 		 	            	      <li>MK商城</li>
+	 		 	            	      <li>团购</li>
+	 		 	            	      <li>限时抢购</li>
+	 		 	            	      <li>经销商</li>
+	 		 	            	      <li>产品报价</li>
+	 		 	            	      <li>论坛</li>
+	 		 	            	      <li>问答</li>
+	 		 	            </ul>
+	 		 	            <ul class="d-list">
+	 		 	            	  <li>关于MK商城</li>
+	 		 	            	  <li>帮助中心</li>
+	 		 	            	  <li>联系我们</li>
+	 		 	            	  <li>发展历程</li>
+	 		 	            	  <li>媒体报道</li>
+	 		 	            </ul>
+	 		 	            <p>&copy;2016 中关村在线 版权所有.京ICP证150096号  &nbsp;   京ICP备14061128号  &nbsp;  京公网安备11010802020026号 &nbsp; 网络文化经营许可证京网文[2016]1631-199</p>
+	 		 	      </div>
+	 		 </div>
+	 		
+	 	</div>
+  
+	</body>
+</html>

@@ -1,0 +1,808 @@
+
+img{
+	  border: none;
+}
+
+.h2-lujing{
+	width: 1198px;
+	height: 35px;
+	line-height: 35px;
+	margin: 0 auto;
+}
+
+.h2-lujing a{
+	color: #333;
+}
+
+
+.h2-lujing span{
+	color: #ccc;
+}
+
+
+/*********左边图片*********/
+
+.glass{
+	width: 1198px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+.glass-img{
+	 width: 450px;
+	 height: 560px;
+	 float: left;
+	 
+}
+
+
+.glass-focus{
+	 width: 450px;
+	 height: 420px;
+}
+
+/*.glass-focus img{
+	 margin-bottom: 10px;
+	 margin-top: 12px;
+}*/
+
+.glass-ul{
+	 width: 450px;
+	 height: 70px;
+	 margin-bottom: 15px;
+}
+
+.glass-ul li{
+	 position: relative;
+	 width: 70px;
+	 height: 70px;
+	 float: left;
+	 margin-left: 10px;
+}
+
+.glass-ul i{
+	 display: none;
+	 width: 69px;
+	 height: 69px;
+	 top: 1px;
+	 left: 1px;
+	 position: absolute;
+	 border: 1px solid #c40000;
+}
+
+/*********左边图片下的分享*********/
+.share{
+	width: 450px;
+	height: 30px;
+	line-height: 30px;
+}
+
+
+.share a{
+	display: block;
+	width: 80px;
+	height: 30px;
+	float: left;
+	color: #666;
+	text-indent: 30px;
+	margin-left: 20px;
+}
+
+.share a:hover{
+	 color: #C40000;
+}
+
+.guanzhu{
+	 background: url(img/a1.jpg) no-repeat left center;
+}
+
+.fenxiang{
+	 background: url(img/a2.jpg) no-repeat left center;
+}
+
+
+/*********中间的详情*********/
+.introduce{
+	 width: 510px;
+	 float: left;
+	  padding-right: 20px;
+	   border-right: 1px solid #ccc;
+}
+
+.introduce-p{
+	  display: inline-block;
+	  width: 510px;
+	  height: 80px;
+	  line-height: 24px;
+	  margin-top: 20px;
+	  font-size: 16px;
+}
+
+.introduce-p span{
+	  font-size: 12px;
+	  color: #999999;
+}
+
+/*********价格*********/
+.introduce-price{
+	 width: 510px;
+	 height: 42px;
+	 line-height: 42px;
+	 color: #666;
+	 font-size: 12px;
+	 margin-top: 10px;
+	 background-color: #f7f5f5;
+}
+
+
+.introduce-price span{
+	  font-size: 24px;
+	  color: #C40000;
+	  font-weight: bold;
+}
+
+/*********配送*********/
+.peisong{
+	 width: 510px;
+	 height: 32px;
+	 line-height: 32px;
+	 margin-top: 10px;
+}
+
+.peisong dt{
+	 width: 66px;
+	 height: 32px;
+	 font-size: 12px;
+	 color: #999;
+	 float: left;
+}
+
+.peisong dd{
+	  width: 400px;
+	  float: left;
+	  height: 32px;
+	  color: #4d4b4b;
+}
+
+.peisong dd span{
+	 display: block;
+	 width: 40px;
+	 height: 25px;
+	 margin-top: 5px;
+	 line-height: 25px;
+	 float: left;
+	 border:  1px solid #CCCCCC;
+	 background: url(img/aa.jpg) no-repeat right center;
+}
+
+.peisong dd strong{
+	 font-weight: bold;
+}
+
+
+/*********评价*********/
+.evaluate{
+	 width: 510px;
+	 height: 32px;
+	 line-height: 32px;
+}
+
+.evaluate dt{
+	 width: 66px;
+	 height: 32px;
+	 font-size: 12px;
+	 color: #999;
+	 float: left;
+}
+
+.evaluate dd{
+	  width: 400px;
+	  float: left;
+	  height: 32px;
+	  color: #4d4b4b;
+}
+
+
+.evaluate a{
+	 color: #333;
+}
+
+.evaluate a:hover{
+	 color: #c40000;
+}
+
+.evaluate a em{
+	 color: #C40000;
+	 font-weight: bold;
+}
+
+/*********服务保障*********/
+.server{
+	 width: 510px;
+	 height: 65px;
+	 border-bottom: 1px solid #CCCCCC;
+}
+
+
+.server dt{
+	 width: 66px;
+	 height: 32px;
+	 font-size: 12px;
+	 color: #999;
+	 float: left;
+	 line-height: 32px;
+}
+
+.server dd{
+	  width: 400px;
+	  float: left;
+	  height: 32px;
+	  color: #4d4b4b;
+	 line-height: 32px;
+}
+
+
+.server-dd{
+	 margin-left: 66px;
+}
+
+
+.server dd span{
+	 display: block;
+	 width: 90px;
+	 height: 32px;
+	 line-height: 32px;
+	 text-indent: 30px;
+	 float: left;
+}
+
+.server-span1{
+	 background: url(../img/11-1.png) no-repeat left center;
+}
+
+.server-span2{
+	 background: url(../img/12-1.png) no-repeat left center;
+}
+
+.server-span3{
+	 background: url(../img/13-1.png) no-repeat left center;
+}
+
+.server-span4{
+	 background: url(../img/14-1.png) no-repeat left center;
+}
+
+/*********颜色与类别的选择*********/
+.color-type{
+	 width: 510px;
+	 height: 54px;
+	 margin-top: 5px;
+}
+
+.color-type dt{
+	 width: 66px;
+	 height: 32px;
+	 font-size: 12px;
+	 color: #999;
+	 float: left;
+	 margin-top: 20px;
+	 line-height: 32px;
+}
+
+.color-type dd{
+	 width: 100px;
+	 height: 32px;
+	  float: left;
+	 margin-left: 5px; 
+	 margin-top: 20px;
+	 line-height: 32px;
+	 text-align: center;
+	 border: 1px solid #CCCCCC;
+	 position: relative;
+}
+
+.color-type dd:hover{
+	 border: 1px solid #bc0d1a;
+}
+
+.color-type dd i{
+	 position: absolute;
+	 bottom: -1px;
+	 right: -1px;
+	 width: 12px;
+	 height: 11px;
+	 display: none;
+	 background: url(img/gb.jpg) no-repeat center;
+}
+
+
+/*********套餐*********/
+.suit{
+	 width: 510px;
+	 margin-top: 10px;
+}
+
+
+.suit dt{
+	 width: 66px;
+	 height: 32px;
+	 font-size: 12px;
+	 color: #999;
+	 float: left;
+	 margin-top: 10px;
+	 line-height: 32px;
+	
+}
+
+.suit dd{
+	 width: 442px ;
+	 float: left;
+}
+
+.dd-ul{
+   width: 472px ;
+   height: 37px; 
+}
+
+.dd-ul li{
+	float: left;
+	padding: 10px;
+	text-align: center;
+	font-size: 11px;
+	margin-top: 5px;
+	margin-left: 4px;
+	margin-right: 10px;
+	position: relative;
+	border: 1px solid #CCCCCC;
+}
+
+.dd-ul li.activeli{
+	border: 1px solid #bc0d1a;
+}
+
+.dd-ul li i{
+	 position: absolute;
+	 bottom: -1px;
+	 right: -1px;
+	 width: 12px;
+	 height: 11px;
+	 display: none;
+	 background: url(img/gb.jpg) no-repeat center;
+}
+
+.dd-div{
+	 width: 410px;
+	 border: 1px solid #CCCCCC;
+	 margin-top: 10px;
+	 margin-left: 2px;
+	 line-height: 21px;
+	 padding: 10px;
+	 background-color: #f7f5f5;
+}
+
+
+/*********购买数量*********/
+.quantity{
+	  width: 510px;
+	  height: 50px;
+	  margin-top: 18px;
+}
+
+.quantity dt{
+	 width: 66px;
+	 height: 32px;
+	 color: #999;
+	 float: left;
+	 line-height: 32px;
+	
+}
+
+.quantity dd{
+	 width:400px;
+	 float: left;
+	 height: 32px;
+	 line-height: 32px;
+	 color: #999;
+}
+
+.quantity dd p{
+	 display: block;
+	 height: 32px;
+	 width: 106px;
+	 float: left;
+	 border: 1px solid #CCCCCC;
+}
+
+
+
+.quantity dd span{
+	 display: block;
+	 width: 32px;
+	 height: 32px;
+	 float: left;
+	 background-color: #f8f8f8;
+}
+
+.quantity dd input{
+	  display: block;
+	  width: 40px;
+	  height: 30px;
+	  border: none;
+	  float: left;
+	  outline: none;
+	  text-align: center;
+	  vertical-align: middle;
+}
+
+.jian{
+	background: url(img/jian.jpg) no-repeat center center;
+}
+
+
+.jia{
+	background: url(img/jia.jpg) no-repeat center center;
+}
+
+
+/*******购买********/
+
+
+.btndiv{
+	 width: 400px;
+	 height: 50px;
+	 margin-top: 30px;
+	 margin-bottom: 30px;
+	 margin-left: 60px;
+	 text-align: center;
+}
+
+.btndiv button{
+	border: none;
+	height: 50px;
+	width: 140px;
+	 font-size: 18px;
+	 line-height: 50px;
+	margin-right: 15px;
+}
+
+
+
+.btn1{
+	background-color: #C40000;
+	color: white;
+}
+
+.btn2{
+	background-color: #e9adaf;
+	color:#f62931;
+}
+
+
+
+
+
+/***********客服**************/
+
+.customer{
+	   width: 216px;
+	   float: left;
+}
+
+.customer h2{
+	  width: 216px;
+	  border-bottom: 1px solid #ccc;
+	  height: 75px;
+	  text-align: center;
+	  line-height: 75px;
+	  font-size: 14px;
+}
+
+
+.customer-1{
+	  width: 216px;
+	  
+}
+
+
+.customer-1 p{
+	    display: block;
+	    width: 216px;
+	    height: 30px;
+	    margin-top: 18px;
+}
+
+.customer-1 p span{
+	display: block;
+	  width: 77px;
+	  height: 28px;
+	  text-align: center;
+	  line-height: 28px;
+	  float: left;
+	  background-color: #f5f3f3;
+	  border:  1px solid #CCCCCC;
+	  color: #666;
+	  margin: 0 10px;
+}
+
+.customer-1 p span:hover{
+	   background-color: #d7d4d4;
+}
+
+
+
+/***** 店铺热卖**********/
+
+.selling{
+	  width: 1198px;
+	  height: 304px;
+	  margin: 0 auto;
+	  margin-top: 8px;
+	  border: 1px solid #ccc;
+}
+
+.selling h2{
+	  width: 1198px;
+	  height: 32px;
+	  line-height: 32px;
+	  border-bottom: 1px solid #ccc;
+	  background-color: #ebeaea;
+	  text-indent: 10px;
+}
+
+
+.selling dl{
+	    width: 164px;
+	    height:240px;
+	    float: left;
+	    margin-left: 35px;
+	    margin-top: 10px;
+}
+
+
+.selling dl dt{
+	   width: 164px;
+	   height: 154px;
+	   padding-top: 5px;
+	   padding-bottom: 10px;
+}
+
+
+.selling dl dd a{
+	  color: black;
+	  line-height: 18px;
+}
+
+.selling dl dd a:hover{
+	    color: #fc1212;
+}
+
+
+.selling dl dd span{
+	  margin-top: 15px;
+	   color:  #f90e0e;
+	   font-size: 15px;
+}
+
+
+
+
+
+/**************详情**********/
+
+.xiangqing{
+	 width: 1198px;
+	 margin: 0 auto;
+	 margin-top: 10px;
+}
+
+
+
+.side-left{
+	 width: 180px;
+	 float: left;
+}
+
+
+.diannei{
+    width: 178px;
+    height: 130px;
+    border: 1px solid #CCCCCC;	  
+	 margin-bottom: 15px;
+}
+
+.diannei h3{
+	   width: 178px;
+	   height: 30px;
+	   border-bottom: 1px solid #CCCCCC;
+	   background-color: #f7f5f5;
+	   line-height: 30px;
+	   text-indent: 10px;
+	   font-size: 13px;
+}
+
+.diannei p{
+	  color: #666;
+	 text-indent: 10px;
+}
+
+.input-text{
+	  border: none;
+	 border: 1px solid #ccc;
+	  width: 50px;
+	  height: 22px;
+	  margin-left: 70px;
+	  margin-top: 5px;
+} 
+
+.diannei p input{
+	 border: none;
+	 border: 1px solid #ccc;
+	  width: 40px;
+	  height: 22px;
+}
+
+.diannei  .form-p{
+	 margin-top: 5px;
+	 margin-bottom: 5px;
+}
+
+.diannei  .form-p input{
+	 border: none;
+	 border: 1px solid #ccc;
+	 width: 103px;
+}
+
+.shoufeng{
+	   width: 178px;
+	   border: 1px solid #ccc;
+	   margin-bottom: 20px;
+}
+
+.shoufeng h2{
+	  width: 178px;
+	  height: 30px;
+	  border-bottom: 1px solid #ccc;
+	  background-color: #f7f5f5;
+	  text-indent: 30px;
+	  line-height: 30px;
+}
+
+.shoufeng  div{
+	  padding: 5px;
+}
+
+.quanbu{
+	  font-weight: bold;
+}
+
+.shoufeng div p{
+	    text-indent: 20px;
+	    line-height: 24px;
+	    
+}
+
+.shoufeng div p a{
+	 color: #333;
+}
+
+.shoufeng div p a:hover{
+	    color: #FC1212;
+}
+
+
+.cuxiao{
+	  width: 178px;
+	  border: 1px solid #ccc;
+}
+
+.cuxiao h3{
+	  width: 178px;
+	  height: 33px;
+	  line-height: 33px;
+	  text-indent: 15px;
+	  border-bottom: 1px solid #ccc;
+	  background-color: #f7f5f5;
+}
+
+
+.cuxiao dl{
+	   width: 168px;
+	   margin-left: 5px;
+}
+
+.cuxiao dl dt{
+	   width: 168px;
+	   height: 180px;
+	   margin-bottom: 5px;
+}
+
+.cuxiao dl dt img{
+	  margin-top: 10px;
+}
+
+.cuxiao dl dd{
+	 width: 158px;
+	 margin-left: 5px;
+	   line-height: 24px;
+}
+
+.cuxiao dl dd span{
+	  margin-left: 30px;
+	  text-indent: 10px;
+	  color: #C40000;
+}
+
+.cuxiao dl dd del{
+	  margin-left: 10px;
+	  color: #999;
+}
+
+.cuxiao dl dd a{
+	  color: #333;
+}
+
+.cuxiao dl dd a:hover{
+	   color: #FC1212;
+}
+
+
+
+/**********详情图片************/
+
+.side-middle{
+	 width: 1000px;
+	 float: right;
+}
+
+.side-ul{
+	   width: 1000px;
+	   height: 33px;
+	  background-color: #f7f5f5;
+	   border: 1px solid #ccc; 
+}
+
+.side-ul li{
+	  float: left;
+	  padding:  0  15px;
+	  height: 30px;
+	  line-height: 30px;
+}
+
+.side-ul li:hover{
+	     color: #c40000;
+	}
+.side-ul li span{
+	  color: #FC1212;
+}
+
+.side-ul li.acli{
+	  background-color: #fff;
+	  border-top: 2px solid #C00;
+}
+
+
+.taocan{
+	  width: 900px;
+}
+
+.taocan p{
+	   line-height: 25px;
+	   margin-top: 10px;
+	   margin-bottom: 5px;
+}
+
+.taocan p span{
+	   font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+

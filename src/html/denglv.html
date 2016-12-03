@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+		<link rel="stylesheet" href="../css/enter.css" />
+		<script type="text/javascript" src="../js/jquery-1.12.0.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script>
+			  $(function(){
+			  	     
+			  	      var $btn=$("#btn");
+			  	    
+			  	        
+			  	      $btn.on("click",function(){
+			  	      	         	
+			  	           var str=getCookie("user");
+			  	      //       console.log(str);
+			  	        var    arr=JSON.parse(str);
+			  	        
+			  	      	   var $username=$("#username").val();
+			  	      	   var $pass=$(".pass").val();
+			  	    
+//			  	      	    if ($username==arr[0].username  && $pass==arr[0].pass) {
+//			  	      	    	    alert("登录成功！");
+//			  	      	    	     addCookie("user1",$username,7);
+//			  	      	    	      location.href="../index.html";
+//			  	      	    }else{
+//			  	      	    	   alert("登录失败！");
+//			  	      	    }
+			  	      	
+			  	      	   $.each(arr,function(idx,item){
+			  	      	   	      console.log($username);
+			  	      	   	       if ($username==item.username && $pass==item.pass) {
+			  	      	   	       	      alert("登录成功！");
+			  	      	   	       	    addCookie("user1",JSON.stringify($username),7,'/');
+			  	      	   	       	     location.href="../index.html";
+			  	      	   	       }else{
+			  	      	   	           	alert("登录失败！");
+			  	      	          }
+			  	      	   });
+			  	      	  
+			  	      });
+			  	      
+			  	      //键盘监听事件  回车键 登录
+			  	      $(document).on("keydown",function(e){
+			  	      	                
+			  	      	             var   e= e || event ;
+			  	      	              
+			  	      	           if (e.keyCode==13) {
+					  	      	           	     	         	
+					  	           var str=getCookie("user");
+					  	      //       console.log(str);
+					  	        var    arr=JSON.parse(str);
+					  	        
+					  	      	   var $username=$("#username").val();
+					  	      	   var $pass=$(".pass").val();
+					  	      	           	
+					  	      	           		
+					  	      	   $.each(arr,function(idx,item){
+					  	      	   	      console.log($username);
+					  	      	   	       if ($username==item.username && $pass==item.pass) {
+					  	      	   	       	      alert("登录成功！");
+					  	      	   	       	    addCookie('user1',JSON.stringify($username),7,'/');
+					  	      	   	       	     location.href="../index.html";
+					  	      	   	       }else{
+					  	      	   	           	alert("登录失败！");
+					  	      	          }
+					  	      	   });
+					  	      	           	
+			  	      	           	
+			  	      	           }else{
+			  	      	           	   return;
+			  	      	           }
+			  	      	 
+			  	      	
+			  	      });
+			  	      
+			  	      
+			  });
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			
+			   <div class="top">
+			   	      <dl>
+			   	      	    <dt>MK商城</dt>
+			   	      	    <dd>MK网上商城</dd>
+			   	      </dl>
+			   	      <p>已经没有MK商城账号？ <a href="zhuce.html">立即注册  </a></p>
+			   </div>
+			  <div class="content">
+			  	  <a href="#" class="img-enter"></a>
+			  	  <div class="enter">
+			  	  	      <div class="enter-1">
+			  	  	      	    <h2 class="enter-h2"><p>登录MK商城</p><span>手机动态码登录</span></h2>
+			  	  	      	    <input type="text" id="username"  class="user" placeholder="手机号/邮箱/用户名"/>
+			  	  	      	    <input type="password" id="pass"  class="pass" placeholder="密码"/>
+			  	  	      	    <p class="enter-a"><a href="#">忘记密码？</a></p>
+			  	  	      	    <input type="button" id="btn" value="登 录" class="btn" />
+			  	  	      	    <h3 class="enter-h3">
+			  	  	      	    	<p>合作账号登录：</p>
+			  	  	      	    	<span class="enter-h3-1"></span>
+			  	  	      	    	<span class="enter-h3-2"></span>
+			  	  	      	    	<span class="enter-h3-3"></span>
+			  	  	      	    	<span class="enter-h3-4"></span>
+			  	  	      	    </h3>
+			  	  	      </div>
+			  	  </div>
+			  </div> 		
+		</div>
+		<div class="bottom">
+				  <div class="bottom-m">
+				  	   <ul>
+				  	   	    <li><a href="#">关于MK商城</a> </li>
+				  	   	    <li class="border-y"><a href="#">联系我们</a> </li>
+				  	   	    <li><a href="#">帮助中心</a> </li>
+				  	   </ul>
+				  	   <span>&copy; MK在线 版权所有</span>
+				  </div>
+			</div>
+	</body>
+</html>

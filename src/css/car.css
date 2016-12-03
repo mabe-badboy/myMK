@@ -1,0 +1,490 @@
+
+ a:hover{
+	   color: #FC1212;
+	   text-decoration: underline;
+}
+
+
+/**************顶部*****************/
+
+.header{
+	font-size: 12px;
+	 width: 100%;
+	 height: 30px;
+	 background: #f5f5f5;
+	 border-bottom: 1px solid #e6e6e6;
+}
+.header-1{
+	 width: 960px;
+	 height: 30px;
+	 margin: 0 auto;
+}
+/************顶***左***********/
+.ul1{
+	
+	width: 350px;
+	height: 30px;
+	 float: left;
+}
+.ul1 li{
+	color: #666;
+	 margin-right: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+
+/***********购物车的数量**********/
+.car-number{
+	  color: #FC1212;
+}
+
+/************顶***右***********/
+.ul2{
+	 height: 30px;
+	 float: right;
+}
+.ul2 li{
+	color: #666;
+	height: 15px;
+	  float: left;
+	  margin-top: 10px;
+	  margin-left: 20px;
+}
+.ul2 li a{
+	 color: #666;
+}
+.ul2 li .img{
+	 border: none;
+	 height: 15px;
+	 width: 10px;
+	 float: left;
+}
+.a_line{
+	width: 75px;
+	height: 15px;
+	
+}
+.a_line span{
+	display: block;
+	height: 15px;
+	width: 50px;
+	float: left;
+	margin-left: 3px;
+	line-height: 15px;
+}
+
+.a_line img{
+	float: left;
+}
+.img1{
+	margin-top: 4px;
+}
+
+.border_right{
+	 border-right: 1px solid #666;
+	 padding-right: 15px;
+}
+
+
+
+.logo{
+	 width: 960px ;
+	 margin: 0 auto;
+	 height: 130px;
+}
+
+.imgaa{
+	   margin-top: 20px;
+	   margin-left: 3px;
+	   float: left;
+}
+
+.imgcc{
+	   float: right;
+	   margin-top: 30px;
+}
+
+
+
+/***************购物车列表*************/
+
+
+.list{
+	   width: 960px;
+	   margin: 0 auto;
+	   min-height: 200px;
+	   margin-bottom: 30px;
+}
+
+.top-ul{
+	  width: 960px;
+	  height: 36px;
+	  background-color: #E6E6E6;
+	  line-height: 36px;
+	  border-top: 2px solid #C40000;
+}
+
+.top-ul li
+{
+	  float: left;
+	  text-align: center;
+	  margin-left: 10px;
+}
+
+.ul-li1{
+	  padding-right: 108px;
+}
+
+
+.ul-li2{
+	  padding-right: 210px;
+}
+
+.ul-li3{
+	  padding-right: 72px;
+}
+
+.ul-li4{
+	  padding-right: 88px;
+}
+
+.ul-li5{
+	  padding-right: 68px;
+}
+
+.ul-li6{
+	  padding-right: 50px;
+}
+
+/**************总价*************/
+
+.op{
+           display: block;
+           width: 960px;
+           margin: 0 auto;
+           margin-bottom: 20px;
+           margin-top: 20px;
+           text-align: right;
+}
+
+.op span{
+        color: #FC1212;
+        font-size: 16px;
+}
+
+/***************结算************/
+
+.p2{
+	 display: block;
+	  width: 960px;
+	  margin: 0 auto;
+	  position: relative;
+	  border: 1px solid #ccc;
+	  height: 35px;
+	  line-height: 35px;
+}
+
+.p2  label{
+	  margin-left: 15px;
+}
+
+.p2  a{
+	  margin-left: 15px;
+}
+.p2  a:hover{
+	   color: #FC1212;
+	   text-decoration: underline;
+}
+
+.pa{
+	  display: block;
+	  height: 35px;
+	  width: auto;
+	  position: absolute;
+	  top: 0;
+	  right: 160px;
+}
+
+.pspan{
+	  display: block;
+	  position: absolute;
+	  width: 130px;
+	  height: 37px;
+	  font-size: 17px;
+	  line-height: 35px;
+	  text-align: center;
+	  right: -1px;
+	  top: -1px;
+	  color: white;
+	  border-radius: 3px;
+	  background-color: orange;
+}
+
+/*********猜你喜欢***********/
+.cainixihuan{
+	   width: 960px;
+	   height: 250px;
+	   margin: 0 auto;
+	   margin-top: 20px;
+	   position: relative;
+}
+
+
+.cainixihuan h3{
+	   width: 130px;
+	   height: 35px;
+	   text-align: center;
+	   line-height: 35px;
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   z-index: 2;
+	   font-size: 16px;
+	   background-color: #fff;
+	   border-top: 2px solid #C40000;
+	   border-left: 1px solid #ccc;
+	   border-right: 1px solid #ccc;
+}
+
+.xhlist{
+	   width: 960px;
+	   height: 215px;
+	   border: 1px solid #ccc; 
+	   position: absolute;
+	   top: 35px;
+	   left: 0;
+}
+
+.xhlist dl{
+	  width: 160px;
+	  float: left;
+	  margin-left: 27px;
+	  margin-top: 20px;
+}
+
+.xhlist dl dt{
+	   width: 160px;
+	   height: 120px;
+	   border: 1px solid #ccc;
+}
+
+.xhlist dl dt img{
+	   width: 160px;
+	   height: 120px;
+}
+
+
+.xhlist dl dd{ 
+          width: 150px;
+          text-align: center;
+          margin: 0 auto;
+          margin-top: 10px;
+           line-height: 20px;
+
+   }
+
+.xhlist dl dd a{
+
+   color: #333;
+
+}
+
+.xhlist dl dd a:hover{
+            color: #FC1212;
+  }
+
+
+.xhlist dl dd span{
+             color: #FC1212;
+             font-size: 16px;
+  } 
+
+/*********底部***********/
+
+.bottom{
+      
+      width: 960px;
+      margin: 0 auto;
+      height: 150px;
+      margin-top: 50px;
+      border-top: 1px solid #ccc;
+  
+  
+  }
+
+
+.bottom ul{
+  
+          width: 440px;
+          height: 30px;
+          margin: 0 auto;
+          margin-top: 15px;
+
+}
+
+.bottom ul li{
+         float: left;
+         margin-right: 12px;
+         padding-right: 12px;
+         margin-top: 5px;
+         border-right: 1px solid #ccc;
+}
+
+.bottom .border-n{
+       border: none;
+}
+
+.bottom p{
+        text-align: center;
+        font-size: 13px;
+}
+
+.bottom div{
+              width: 353px;
+              height: 46px;
+              margin: 0 auto;
+              margin-top: 20px;
+}
+
+/*********购物车***********/
+
+.goods{
+      width: 960px;
+      
+}
+
+
+
+.goods h2{
+             width: 960px;
+             height: 30px;
+             line-height: 30px;
+             margin-top: 15px;
+             margin-bottom: 10px;
+}
+
+.goods h2 input{
+              height: 15px;
+              width: 15px;
+              margin-top: 8px;
+              float: left;
+}
+
+.goods h2 span {
+           display: block;
+           width: 40px;
+           height: 30px;
+           float: left;
+}
+.goods h2 a {
+              display: block;
+             width: 110px;
+             height: 30px;
+             float: left;
+
+}
+
+.goods h2 img{
+       float: left;
+}
+
+.goods-list{
+               width: 960px;
+               height: 130px;
+               border: 1px solid #ccc;
+}
+
+
+.goods-list input{
+              float: left;
+              margin-top: 35px;
+             margin-left: 10px;
+}
+
+.goods-list img{
+                 width: 80px;
+                 height: 60px;
+                 border: 1px solid #ccc;
+                 margin-top: 10px;
+             margin-left: 10px;
+                 float: left;
+
+}
+
+.title{
+            width: 250px;
+            height: 110px;
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+}
+
+.title  a {
+          line-height: 18px;
+          font-size: 13px;
+}
+
+.title  p{
+             line-height: 20px;
+}
+
+
+.ss1{
+              display: block;
+              width: 170px;
+              height: 130px;
+              line-height: 130px;
+              color: #FC1212;
+              text-align: center;
+              float: left;
+}
+
+.ss2{
+              display: block;
+              width: 82px;
+              height: 130px;
+              color: #FC1212;
+              line-height: 130px;
+              text-align: center;
+              float: left;
+}
+
+.ss3{
+              display: block;
+              width: 140px;
+              height: 130px;
+              line-height: 130px;
+              text-align: center;
+              float: left;
+}
+
+.ss4{
+              display: block;
+              width: 90px;
+              height: 130px;
+              color: #FC1212;
+              line-height: 130px;
+              text-align: center;
+              float: left;
+}
+
+.ss5{
+              display: block;
+              width: 80px;
+              height: 130px;
+              line-height: 130px;
+              text-align: center;
+              float: left;
+}
+
+
+
+
+
+
+
+
+
+
+

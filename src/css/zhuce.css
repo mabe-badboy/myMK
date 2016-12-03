@@ -1,0 +1,264 @@
+
+/*        注册主要部分        */
+.content{
+	    border: 1px solid #e6e6e6; 
+	    width: 980px;
+	    height: 764px;
+	   
+}
+
+
+.content h2{
+	height: 60px;
+	width: 980px;
+	background: #fafafa;
+	color: #999;
+	font-size: 17px;
+	line-height: 60px;
+	text-indent: 90px;
+}
+.content-1{
+	 float: left;
+	 height: 620px;
+	width: 500px;
+	margin-left: 85px;
+	margin-top: 30px;
+}
+.content-1 ul{
+	  width: 500px;
+	  height: 40px;
+}
+.content-1 ul li{
+	 width: 248px;
+	 height:30px;
+	 text-align: center;
+    font-size: 17px;
+    padding-top: 7px;
+    border-bottom: 1px solid #E6E6E6;
+    float: left;
+}
+.content-1 ul li img{
+	width: 12px;
+	height: 22px;
+	float: left;
+	margin-left: 60px;
+	
+}
+.content-1 ul li p{
+	display: block;
+	width: 150px;
+	height: 30px;
+	float: left;
+	text-align: left;
+	margin-left: 8px;
+	line-height: 22px;
+}
+
+
+ .content-1   .ul-border{
+	 border-right: 1px  solid  #E6E6E6;
+    border-left: 1px  solid  #E6E6E6;
+    border-top: 2px solid #c00;
+    border-bottom: none;
+    
+ }
+ 
+ 
+ /****************输入框***************/
+ .content-1 p{
+ 	position: relative;
+ 	display: block;
+ 	font-size: 14px;
+ 	color: #666666;
+ 	height: 40px;
+ 	width: 500px;
+ }
+ 
+ 
+.content-1 .txt{
+	margin-top: 30px;
+}
+
+
+ .content-1 p input{
+      border: none;
+      margin: 0;
+      padding: 0;
+      border-radius: 3px;
+ 	  border: 1px solid #ccc;
+ 	  height: 40px;
+ 	  width: 288px;
+ } 
+
+ 
+.content-1 p label span{
+	color: red;
+}
+
+.content-1 p label{
+	display: block;
+	float: left;
+	width: 90px;
+	line-height: 40px;
+	text-align: right;
+	height: 100%;
+  color: #666666;
+}
+
+ .content-1 .tab_input{
+ 	   width: 160px;
+ 	
+ }
+ .content-1  .p_p .but-tt{
+ 	   width: 100px;
+ 	   height: 40px;
+ 	   border: none;
+ 	   text-align: center;
+ 	   font-size: 10px;
+ 	   color: #666;
+ 	   line-height: 40px;
+ 	   background: #f2f2f2;
+ 	   position: absolute;
+       border: 1px solid #ccc;
+ 	   top: 0;
+ 	   left: 260px;
+ }
+.content-1  .p_p a{
+	 position: absolute;
+	 left: 370px;
+	 top: 20px;
+	
+}
+   .content-1       .p_p{
+   	       position: relative;
+   	  
+   }
+   .content-1       .p_p label{
+   	       position: absolute;
+   	       left: 0;
+   	       top: 0;
+   	
+   }
+
+   .content-1    .p_p input{
+   	       position: absolute;
+   	       left: 90px;
+   	       top: 0;
+   	
+   }
+
+        .content-1  .tab-p{
+        	   text-indent: 90px;
+        	  color: #aaa;
+        	  line-height: 35px;
+        	
+        }
+        
+       .content-1  .radio{
+       	   display: block;
+       	   height: 20px;
+       	   width: 500px;
+       	   margin-top: 20px;
+       }       
+  .content-1  .radio input{
+  	    margin-left: 90px;
+  	    width: 14px;
+  	    height: 12px;
+  }        
+      .content-1  .radio a{
+      	  color: #134ba0;
+      }
+          .content-1    .sumb {
+          	   	 margin-top: 25px;
+          }
+      
+    .content-1    .sumb input{
+    	 margin-left: 90px;
+ 
+    	    width: 290px;
+    	    height: 40px;
+    	    color: white;
+    	    font-size: 14px;
+    	    font-weight: bold;
+    	    border: none;
+    	    background: #de3030;
+    }
+   
+   
+   /******错误提示信息****/   
+   .cuowu{
+   	  position: absolute;
+   	  width: 60px;
+   	  height: 40px;
+   	  text-align: center;
+   	  line-height: 40px;
+   	  right: 0;
+   	  top: 0;
+   }
+      
+      /***********右边的列表**********/
+    .content .ul_list{
+    	 float: left;
+    	  margin-left: 112px;
+    	  margin-top: 30px;
+    	  width: 200px;
+    	  height: 250px;
+    	  border-left: 1px solid #E6E6E6;
+    	
+    }  
+      
+      .content .ul_list li{
+      	   height: 36px;
+      	   width: 170px;
+      	   border-radius: 3px;
+      	   margin-left: 24px;
+      	   margin-bottom: 20px;
+      }   
+  
+      .content  .ul_list_p{
+      	   line-height: 18px;
+      	   color: #666;
+      }    
+     .content  .ul_list_p a{
+     	 color: #134ba0;
+     	
+     }
+       .content  .ul_list img{
+       	    margin-left: 18px;
+       	    margin-top: 8px;
+       	    float: left;
+       }  
+   .ul_list_1  a,   .ul_list_2 a,  .ul_list_3 a , .ul_list_4 a{
+     	 display: block;
+     	 float: left;
+     	 width: 110px;
+     	 height: 20px;
+     	 color: #FFFFFF;
+     	 margin-left: 12px;
+     	 margin-top: 10px;
+     }  
+       
+       .ul_list    .ul_list_3 a{
+         	margin-left:2px;
+         }
+  .ul_list_1{
+  	 background-color: #f55643 ;
+  }
+    
+    .ul_list_2{
+  	 background-color: #039ae3 ;
+  }
+     
+     .ul_list_3{
+  	 background-color: #f57601 ;
+  }
+    
+     .ul_list_4{
+  	 background-color: #545be7 ;
+  }
+    
+    
+  
+
+
+
